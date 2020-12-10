@@ -1,12 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import ReactGA from "react-router-ga";
 
-function LocationDisplay() {
+export default function LocationDisplay() {
   let location = useLocation();
-  React.useEffect(() => {
-    ReactGA.send(["pageview", location.pathname]);
-  }, [location]);
+
+  return (
+    <>
+      <div data-testid="location-display">{location.pathname}</div>
+    </>
+  );
 }
 
-export default LocationDisplay;

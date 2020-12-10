@@ -2,15 +2,9 @@ import React, { Component } from "react";
 import "../styles/App.css";
 import Home from "../components/Home.js";
 import About from "../components/About.js";
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Switch,
-  useLocation
-} from "react-router-dom";
+import LocationDisplay from "../components/LocationDisplay.js";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import NoMatch from "../components/NoMatch";
-import LocationDisplay from "../components/LocationDisplay";
 
 class App extends Component {
   render() {
@@ -28,9 +22,11 @@ class App extends Component {
             <Route component={NoMatch} />
           </Switch>
         </BrowserRouter>
+        <LocationDisplay />
       </div>
     );
   }
 }
 
 export default App;
+export { LocationDisplay, Home, About, NoMatch };
